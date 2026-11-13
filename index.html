@@ -158,7 +158,9 @@ dt{color:var(--ash)}
 
 /* широкий проект с галереей */
 .project.wide{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
-.project.wide .credits{position:static}
+.project.wide .credits{position:static;grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,72px);align-items:start}
+.project.wide .c-body .ptext{margin-top:0}
+@media (max-width:760px){.project.wide .credits{grid-template-columns:1fr;gap:0}.project.wide .c-body .ptext{margin-top:24px}}
 .project.wide .media{grid-column:1 / -1}
 .gallery{display:flex;flex-direction:column;gap:10px}
 .grow{display:flex;gap:28px}
@@ -328,17 +330,17 @@ const T = {
     taglineSub: "inDrive · Яндекс Сплит · VK Видео",
     hint: "Прокрутите вниз — гранат разлетится",
     cta: "Написать нам",
-    outro: "Пришлите раскадровку — мы превратим её в кадры.",
+    outro: "Пришлите бриф и референсы — мы превратим их в кадры.",
     facts: [
       ["20 млн+", "просмотров у роликов inDrive, над которыми мы работали"],
       ["Cristal", "African Cristal Festival 2026, лучшая анимация"],
-      ["30–40", "итераций на каждый кадр в клипе для inDrive MENA"]
+      ["30–40", "итераций на кадр в клипе для inDrive MENA, над которым мы работали в команде"]
     ],
     howH: "Как мы работаем",
     how: [
       "Сроки обсуждаем на берегу и соблюдаем. Если что-то идёт не по плану, предупреждаем сразу, а не в день сдачи.",
       "Где модель не справляется, дорабатываем кадр вручную в Photoshop и After Effects.",
-      "Подключаемся на любом этапе: от первых тестов и раскадровки до финальной сборки."
+      "Работаем в команде продакшена и подключаемся на любом этапе: от первых тестов до финальной сборки."
     ],
     bandK: "Пристегните мечты · история о Корее",
     bandLead: "Комната героини: тихий вечер за столом и мгновение, когда всё разлетается.",
@@ -350,7 +352,7 @@ const T = {
     together: "Нас двое, и у каждого кадра всегда есть второй взгляд.",
     tools: "Nano Banana, Kling, Seedance, Veo 3, Midjourney, Seedream, After Effects, Photoshop, Premiere",
     contactH: "Напишите нам",
-    director: "Режиссёр", agency: "Агентство", prod: "ИИ-продакшен", dop: "Оператор", us: "Наша работа", client: "Клиент",
+    director: "Режиссёр", agency: "Агентство", prod: "ИИ-продакшен", dop: "Оператор", us: "Наша роль", client: "Клиент",
     watch: "Смотреть", film: "Ролики серии", play: "Включить видео", close: "Закрыть",
     channel: "Канал с работами", shot: "Кадр", cut: "Часть кадров не вошла в финальный монтаж."
   },
@@ -360,17 +362,17 @@ const T = {
     taglineSub: "inDrive · Yandex Split · VK Video",
     hint: "Scroll down and the pomegranate bursts",
     cta: "Get in touch",
-    outro: "Send us the storyboard, and we'll turn it into shots.",
+    outro: "Send us the brief and references, and we'll turn them into shots.",
     facts: [
       ["20M+", "views on the inDrive films we worked on"],
       ["Cristal", "African Cristal Festival 2026, Outstanding Animation"],
-      ["30–40", "iterations per shot on the inDrive MENA music video"]
+      ["30–40", "iterations per shot on the inDrive MENA music video we worked on as part of the team"]
     ],
     howH: "How we work",
     how: [
       "We agree on deadlines up front and keep them. If something goes off plan, you hear it right away, not on delivery day.",
       "Where a model falls short, we finish the shot by hand in Photoshop and After Effects.",
-      "We can join at any stage, from first tests and storyboards to the final cut."
+      "We work as part of the production team and can join at any stage, from first tests to the final cut."
     ],
     bandK: "Buckle Up Your Dreams · the Korea story",
     bandLead: "The heroine's room: a quiet evening at the desk, and the moment everything flies apart.",
@@ -382,7 +384,7 @@ const T = {
     together: "There are two of us, so every shot always gets a second pair of eyes.",
     tools: "Nano Banana, Kling, Seedance, Veo 3, Midjourney, Seedream, After Effects, Photoshop, Premiere",
     contactH: "Write to us",
-    director: "Director", agency: "Agency", prod: "AI production", dop: "DOP", us: "Our part", client: "Client",
+    director: "Director", agency: "Agency", prod: "AI production", dop: "DOP", us: "Our role", client: "Client",
     watch: "Watch", film: "Films in the series", play: "Play video", close: "Close",
     channel: "Our Telegram channel", shot: "Shot", cut: "Some of these shots didn't make the final cut."
   }
@@ -408,7 +410,7 @@ const PROJECTS = [
       ["prod", { ru: "SACCADE", en: "SACCADE" }],
       ["director", { ru: "Ашот Геворкян", en: "Ash Gevorkyan" }],
       ["dop", { ru: "Роман Милованов", en: "Roman Milovanov" }],
-      ["us", { ru: "Дизайн героини, стиллы и анимация предметов: разрушение, жидкости, обратный ход времени. От первых тестов до финала.", en: "Character design, stills and object animation: destruction, liquids, time running backwards. From the first tests to the final cut." }]
+      ["us", { ru: "В ИИ-команде проекта: дизайн героини, стиллы и анимация предметов — разрушение, жидкости, обратный ход времени.", en: "Part of the project's AI team: character design, stills and object animation — destruction, liquids, time running backwards." }]
     ],
     filmsNote: { ru: "Три истории серии и версия на казахском", en: "Three stories in the series and a Kazakh version" },
     films: [
@@ -452,7 +454,7 @@ const PROJECTS = [
     credits: [
       ["agency", { ru: "inlab", en: "inlab" }],
       ["director", { ru: "Дмитрий Ковалев", en: "Mitya Kovalev" }],
-      ["us", { ru: "Стиллы, анимация и движение камеры", en: "Stills, animation and camera movement" }]
+      ["us", { ru: "Анимация в ИИ-команде проекта: машина-фонарь заводится и вздрагивает, загорается первый фонарь, машина проезжает по городу в нескольких сценах, оживает карта города.", en: "Animation as part of the project's AI team: the lantern car starting up and shaking, the first lantern lighting up, the car driving through the city in several scenes, the animated city map." }]
     ],
     facts: { ru: "38 финальных шотов. 28 дней на концепты и производство, ещё 12 на постпродакшен.", en: "38 final shots. 28 days of concepting and production, then 12 days of post-production." },
     films: [ { yt: "hR94jVKW1hc", label: { ru: "Клип", en: "Music video" }, views: { ru: "9,5 млн", en: "9.5M" } } ],
@@ -473,12 +475,11 @@ const PROJECTS = [
     },
     credits: [
       ["director", { ru: "Арсений Попов", en: "Arseniy Popov" }],
-      ["us", { ru: "Стиллы — от раскадровки до финальных кадров", en: "Stills, from storyboard to final frames" }]
+      ["us", { ru: "Стиллы для тендера в команде режиссёра", en: "Stills for the pitch, as part of the director's team" }]
     ],
     gallery: [
       [ { items: [
-          ["dog", { ru: "Пёс из пакетов и коробок тянет хозяйку по улице, чек свисает, как язык", en: "A dog made of bags and boxes pulls its owner down the street, the receipt hanging out like a tongue" }],
-          ["story", { ru: "Раскадровка, с которой всё началось", en: "The storyboard where it all started" }] ] } ],
+          ["dog", { ru: "Пёс из пакетов и коробок тянет хозяйку по улице, чек свисает, как язык", en: "A dog made of bags and boxes pulls its owner down the street, the receipt hanging out like a tongue" }] ] } ],
       [ { items: [
           ["pac1", { ru: "Пакман уносит девушку в небо, вокруг летят её покупки", en: "Pac-Man carries a woman into the sky, her purchases flying around her" }],
           ["pac2", { ru: "Пакман-НЛО утягивает покупки над плюшевым городом", en: "A Pac-Man UFO beams up the shopping over a plush city" }],
@@ -540,7 +541,7 @@ const PROJECTS = [
       en: "A concert that looks as if it were filmed in 1986: spotlights, haze, an eighties stage, an almost static camera and the odd slow push-in. One minute, Full HD."
     },
     credits: [
-      ["us", { ru: "Генерация кадров и монтаж", en: "Shot generation and editing" }]
+      ["us", { ru: "Всё сами: стиллы, анимация и монтаж", en: "All ours: stills, animation and editing" }]
     ],
     video: "concert"
   },
@@ -553,7 +554,7 @@ const PROJECTS = [
       ru: "Нейрофотосессия новогодней коллекции. Нужно было сохранить «ватное» настроение, в котором игрушки будто оживают: дети в костюмах собираются на утренник у ёлки.",
       en: "An AI photo shoot for a New Year collection. The task was to keep the cotton-wool mood in which the toys seem to come alive: children in costumes gathering for a party by the tree."
     },
-    credits: [ ["us", { ru: "Сцены, свет и окружение в стиле бренда", en: "Scenes, lighting and sets in the brand's style" }] ],
+    credits: [ ["us", { ru: "Екатерина: сцены, свет и окружение в стиле бренда", en: "Ekaterina: scenes, lighting and sets in the brand's style" }] ],
     stills: [
       ["vat1", { ru: "Хоровод у ёлки", en: "Dancing around the tree" }],
       ["vat2", { ru: "Медвежонок читает стихи", en: "A bear cub reciting a poem" }],
@@ -663,6 +664,7 @@ function galleryBlock(rows){
 }
 function creditsBlock(p){
   let h = `<h3 class="ptitle">${esc(t(p.title))}</h3><p class="meta">${esc(t(p.meta))}</p>`;
+  if (p.wide) h = `<div class="c-head">${h}</div><div class="c-body">`;
   if (p.award){ const [a,b] = p.award[L]; h += `<div class="award"><span class="laurel">${LAUREL}<strong>${esc(a)}</strong>${LAUREL}</span><p>${esc(b)}</p></div>`; }
   if (p.quote) h += `<p class="quote">${esc(t(p.quote))}</p><p class="meta">${esc(t(p.quoteBy))}</p>`;
   if (p.stat) h += `<p class="stat">${esc(t(p.stat))}${p.statNote ? `<span>${esc(t(p.statNote))}</span>` : ""}</p>`;
@@ -670,6 +672,7 @@ function creditsBlock(p){
   if (p.facts) h += `<p class="pfacts">${esc(t(p.facts))}</p>`;
   if (p.credits) h += `<dl>${p.credits.map(([k,v]) => `<dt>${esc(T[L][k])}</dt><dd>${esc(t(v))}</dd>`).join("")}</dl>`;
   if (p.links) h += `<p class="links">${p.links.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(t(l.label))}</a>`).join("")}</p>`;
+  if (p.wide) h += `</div>`;
   return h;
 }
 function projectHTML(p, pid){
